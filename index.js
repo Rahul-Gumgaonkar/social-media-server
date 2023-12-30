@@ -39,7 +39,7 @@ app.get("/", (req, res) => {
   res.status(200).send("Server Running Successfully");
 });
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 5000;
 
 dbConnect();
 
