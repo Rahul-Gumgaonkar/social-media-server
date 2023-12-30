@@ -113,7 +113,7 @@ const deleteMyProfile = async (req, res) => {
       owner: curUserId,
     });
 
-    // removed myself from followers' followings
+    // removed myself from followers followings
     curUser.followers.forEach(async (followerId) => {
       const follower = await User.findById(followerId);
       const index = follower.followings.indexOf(curUserId);
@@ -220,7 +220,3 @@ module.exports = {
   updateUserProfile,
   getUserProfile,
 };
-
-// getMyPosts
-// deleteMyProfile
-// getUserPosts

@@ -48,12 +48,14 @@ const likeAndUnlikePost = async (req, res) => {
       return res.send(error(404, "Post not found"));
     }
 
+    // If already like then dislike if not then like
     if (post.likes.includes(curUserId)) {
       const index = post.likes.indexOf(curUserId);
       post.likes.splice(index, 1);
     } else {
       post.likes.push(curUserId);
     }
+
     await post.save();
     return res.send(success(200, { post: mapPostOutput(post, req._id) }));
   } catch (e) {
