@@ -80,7 +80,7 @@ const refreshAccessTokenController = async (req, res) => {
 
   const refreshToken = cookies.jwt;
 
-  console.log("refresh", refreshToken);
+  // console.log("refresh", refreshToken);
 
   try {
     const decoded = jwt.verify(
@@ -117,10 +117,11 @@ const generateAccessToken = (data) => {
     const token = jwt.sign(data, process.env.ACCESS_TOKEN_PRIVATE_KEY, {
       expiresIn: "1d",
     });
-    console.log(token);
+    // console.log(token);
     return token;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    return res.send(error(500, e.message));
   }
 };
 
@@ -129,10 +130,11 @@ const generateRefreshToken = (data) => {
     const token = jwt.sign(data, process.env.REFRESH_TOKEN_PRIVATE_KEY, {
       expiresIn: "1y",
     });
-    console.log(token);
+    // console.log(token);
     return token;
   } catch (error) {
-    console.log(error);
+    // console.log(error);
+    return res.send(error(500, e.message));
   }
 };
 

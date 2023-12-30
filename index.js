@@ -46,5 +46,3 @@ dbConnect();
 app.listen(PORT, () => {
   console.log(`Listing on PORT : ${PORT}`);
 });
-
-// KW8YDGsiofCd7RFI;

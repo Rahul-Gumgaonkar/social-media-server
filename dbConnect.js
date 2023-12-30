@@ -15,7 +15,7 @@ module.exports = async () => {
     });
     console.log(`MongoDB connected: ${connect.connection.host}`);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     // If the connection is not Happen with mongodb the simply exit.
     process.exit(1);
   }

@@ -112,7 +112,7 @@ const deletePost = async (req, res) => {
 
     return res.send(success(200, "post deleted successfully"));
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return res.send(error(500, e.message));
   }
 };

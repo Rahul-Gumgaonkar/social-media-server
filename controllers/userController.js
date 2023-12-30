@@ -67,7 +67,7 @@ const getPostsOfFollowing = async (req, res) => {
 
     return res.send(success(200, { ...curUser._doc, suggestions, posts }));
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return res.send(error(500, e.message));
   }
 };
@@ -80,7 +80,7 @@ const getMyPosts = async (req, res) => {
     }).populate("likes");
     return res.send(success(200, { allUserPosts }));
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return res.send(error(500, e.message));
   }
 };
@@ -98,7 +98,7 @@ const getUserPosts = async (req, res) => {
 
     return res.send(success(200, { allUserPosts }));
   } catch (e) {
-    console.log(e);
+    // console.log(e);
     return res.send(error(500, e.message));
   }
 };
