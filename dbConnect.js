@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
 const { ServerApiVersion } = require("mongodb");
 
 module.exports = async () => {
-  const mongoUri = `mongodb+srv://rahul:KW8YDGsiofCd7RFI@cluster0.zjdpm1d.mongodb.net/?retryWrites=true&w=majority&appName=AtlasApp`;
-
+  const mongoUri = process.env.MONGO_URI;
   try {
     const connect = await mongoose.connect(mongoUri, {
       serverApi: {
